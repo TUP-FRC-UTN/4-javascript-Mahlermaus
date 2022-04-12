@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUP - Programacion III - Ejercicio1</title>
+    <style>
+      * {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      input {
+        border-style: groove;
+        border-top: 2px;
+        border-left: 2px;
+        border-right: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Suscripciones</h3>
+    <img
+      src="https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/04/689542/2.jpg?4088"
+      alt="Comprame"
+      width="120px"
+    />
+    <form>
+      <!-- Crear un formulario utilizando los siguientes
+     inputs: text, date, select, textarea, radio y button. -->
+
+      Nombre Completo : <br />
+      <input type="text" name="nombre" id="txtNombre" />
+      <br /><br />
+      Seleccione producto : <br />
+      <select name="producto" id="producto">
+        <option value="1">Apple TV</option>
+        <option value="2">Amazon Prime</option>
+        <option value="3">Netflix</option>
+      </select>
+      <br /><br />
+      Cuantas cuentas asociadas desea : <br />
+      <input type="number" name="cuentas" id="txtCuentas" max="10" />
+      <br /><br />
+      Calidad de Imagen : <br />
+      <input type="radio" name="calidad" id="calidad" value="720" />
+      720p <br />
+      <input type="radio" name="calidad" id="calidad" value="1080" /> 1080p
+      <br />
+      <input type="radio" name="calidad" id="calidad" value="2k" /> 2k <br />
+      <input type="radio" name="calidad" id="calidad" value="4k" /> 4k <br />
+      <br /><br />
+      <button type="button" onclick="validarForm();">Agregar al carrito</button>
+      <button type="menu">Ir al menu</button>
+      <br /><br />
+      <hr />
+      Ingrese comentarios : <br /><br />
+      <textarea
+        name="comentarios"
+        id="comentarios"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <br />
+
+      <br /><br />
+    </form>
+    <script>
+      function enviarComentarios() {
+        var comentarios = document.getElementById("comentarios");
+        var dialogo = confirm("Ninguna sugerencia en los comentarios?");
+        if (comentarios.value == "") {
+          if (dialogo) {
+            alert("gracias por su suscripcion");
+          } else {
+            alert("Ahora puede comentar!");
+            comentarios.focus();
+            return false;
+          }
+        }
+      }
+      function validarForm() {
+        var nombre = document.getElementById("txtNombre").value;
+        var cuentas = document.getElementById("txtCuentas").value;
+        var inputCalidad = document.getElementsByName("calidad");
+
+        if (nombre == "") {
+          alert("Ingrese su nombre completo");
+          return false;
+        }
+        if (cuentas == "") {
+          alert("Debe ingresar un numero");
+          return false;
+        }
+        var seleccionCalidad = false;
+        for (var i = 0; i < inputCalidad.length; i++) {
+          if (inputCalidad[i].checked) {
+            seleccionCalidad = true;
+            break;
+          } else {
+            alert("En que calidad de imagen desea suscribirse?");
+            return false;
+          }
+        }
+        enviarComentarios();
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    background-image: url("https://static01.nyt.com/images/2020/11/03/obituaries/25maradona-ES-1/merlin_179277768_aad070c4-7e63-47ef-8e1b-b3ad1a2d19a3-jumbo.jpg?quality=75&auto=webp");
+    font-weight: bold;
+}
+
+.card {
+    opacity: 0.9;
+}
+
+.titulo {
+    background-color: burlywood;
+}
+
+label {
+    margin-top: 1.5rem;
+}

@@ -1,0 +1,82 @@
+<!-- html, css, javascript -->
+<!-- angular - react - vuejs :frontend-->
+<!-- node js : backend-->
+<!-- react native : movil -->
+<!-- ionic , electron : escritorio -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1 id="elementoTitulo">Clase 4 Programacion III</h1>
+    <p id="parrafo1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+      consequuntur.
+    </p>
+    <p id="parrafo2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+      consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Eveniet, sapiente!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+      consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Unde corrupti nostrum, minus sed excepturi laborum optio cumque et
+      blanditiis neque ducimus, debitis iure! Ab et repellendus ipsam
+      reprehenderit! Doloremque debitis tempora ex cumque, ab minima doloribus
+      vel illum, assumenda ad totam voluptates, tempore aut eaque alias fuga
+      voluptas iure. Cum.
+    </p>
+    <br />
+    <label for="txtDate">AÑO : </label><br />
+    <input type="text" name="txtDate" id="txtDate" /><br /><br />
+    <button id="btnCargarFecha" type="button" onclick="cargarFecha();">
+      Cargar Fecha
+    </button>
+
+    <script>
+      //   var nombre = "Sergio";
+      //   console.log(nombre);
+      //   nombre = 10;
+      //   console.log(nombre);
+
+      var array1 = ["nom1", "nom2", "nom3", "nom4"];
+      //   console.log(array1);
+      //   var array2 = new Array(3).fill(1);
+      //   console.log(array2);
+
+      //   for (var i = 0; i < array1.length; i++) {
+      //     console.log(i);
+      //     alert("log del item" + array1[i]);
+      //   }
+
+      //   for (var item of array1) {
+      //     console.log(i);
+      //     alert("log del item" + array1[i]);
+      //   }
+      var array2 = ["nom1", 24, true];
+      for (var item of array2) {
+        console.log(item);
+        alert("log del item" + array2[item]);
+      }
+    </script>
+  </body>
+</html>

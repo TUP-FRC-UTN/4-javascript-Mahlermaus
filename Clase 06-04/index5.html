@@ -1,0 +1,119 @@
+<!-- html, css, javascript -->
+<!-- angular - react - vuejs :frontend-->
+<!-- node js : backend-->
+<!-- react native : movil -->
+<!-- ionic , electron : escritorio -->
+<!-- microjs : librerias js -->
+<!-- sweet alert , popup -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Registro de persona</h1>
+        <form>
+          Nombre: <br>
+          <input type="text" name="nombre" id="txtNombre"><br>
+          Apellido: <br>
+          <input type="text" name="Apellido" id="txtApellido"><br>
+          <br>
+    
+          Sexo: <br>
+          <input type="radio" name="Sexo" value="masculino">Masculino <br>
+          <input type="radio" name="Sexo" value="femenino">Femenino <br>
+          <input type="radio" name="Sexo" value="otro">Otro
+    
+    
+          <br>
+    
+          <br>
+          Deporte: <br>
+          <select name="deporte" id="deporte">
+            <option value="">Seleccione</option>
+            <option value="tenis">Tenis</option>
+            <option value="futbol">Futbol</option>
+            <option value="rugby">Rugby</option>
+            <option value="padel">Padel</option>
+          </select>
+    
+          <br>
+    
+          <br>
+          Descripcion de usuario:<br>
+          <textarea name="descripcion" rows="10" cols="60" id="txtDescripcion" onkeyup="contadorDeCaracteres();"></textarea>
+          <p for="" id="contador" ></p>
+          <br>
+    
+          <br>
+          <button type="button" onclick="validarForm();">Validar</button>
+          <br>
+          <button type="button" onclick="guardarDatos();"> Guardar Datos</button>
+      </div>
+
+    <script>
+        function validarForm(){
+
+            var nombre = document.getElementById('txtNombre').value;
+            var apellido = document.getElementById('txtApellido').value;
+            var descripcion = document.getElementById('txtDescripcion').value;
+            var inputRadio = document.getElementsByName('Sexo');
+            var optionDeporte = document.getElementById('deporte');
+
+            if(nombre === '' || apellido === ''){
+                alert('Ingrese el nombre Y el apellido');
+                return false;
+            }
+
+            if(descripcion.value ===''){
+                alert('Ingrese descripcion');
+                return false;
+            } else if(descripcion.length > 100 && descripcion.length<10){
+                alert('el minimo son 10 caracteres y el maximo son 100')
+                return false;
+            }
+
+            var seleccionSexo = false;
+            for(var i=0;i<inputRadio.length;i++){
+                if(inputRadio[i].checked){
+                    seleccionSexo=true;
+                    break;
+                } else{
+                    alert('seleccione su sexo')
+                    return false;
+                }
+            }
+            return true;
+        }
+        function guardarDatos(){
+            if(validarForm()){
+                alert('guardando datos ...')
+            } else {
+                alert('Faltan datos')
+            }
+        }
+        function contadorDeCaracteres(){
+          let descripcion = document.getElementById('txtDescripcion').value.length;
+          document.getElementById('contador').innerHTML = descripcion;
+        }
+    </script>
+  </body>
+</html>
